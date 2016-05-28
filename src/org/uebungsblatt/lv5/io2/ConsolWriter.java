@@ -23,14 +23,13 @@ public class ConsolWriter {
 				}
 				else {
 					bos.write(data);
-					bos.flush();
 				}
 			}
+			bos.flush();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }
