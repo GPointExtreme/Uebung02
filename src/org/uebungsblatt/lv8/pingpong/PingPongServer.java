@@ -13,10 +13,11 @@ public class PingPongServer {
 	public static void main(String[] args) {
 		try (
 			ServerSocket server = new ServerSocket(3333);
-			Socket client = server.accept();
 			) 
 		{
 			while(true) {
+				Socket client = server.accept();
+				System.out.println("client connected");
 				processClient(client);
 			}
 		} catch (IOException e) {
@@ -43,7 +44,7 @@ public class PingPongServer {
 					pw.println("ping");
 				}
 				else {
-					pw.print("error");
+					pw.println("error");
 				}
 				pw.flush();
 			}
